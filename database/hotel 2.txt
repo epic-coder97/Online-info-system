@@ -1,0 +1,593 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 06, 2020 at 06:56 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `hotel`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `address_1`
+--
+
+CREATE TABLE `address_1` (
+  `postal_addr_o` varchar(20) NOT NULL,
+  `ph_o` int(11) NOT NULL,
+  `fax_o` int(11) NOT NULL,
+  `res_addr_p` varchar(30) NOT NULL,
+  `postal_addr_p` varchar(30) NOT NULL,
+  `state_p` varchar(20) NOT NULL,
+  `city_p` varchar(20) NOT NULL,
+  `pin_p` int(11) NOT NULL,
+  `std_p` int(11) NOT NULL,
+  `ph_p` int(11) NOT NULL,
+  `res_addt_l` varchar(40) NOT NULL,
+  `postal_addr_l` varchar(30) NOT NULL,
+  `state_l` varchar(20) NOT NULL,
+  `city_l` varchar(20) NOT NULL,
+  `pin_l` int(11) NOT NULL,
+  `std_l` int(11) NOT NULL,
+  `ph_l` int(11) NOT NULL,
+  `per_mob` bigint(20) NOT NULL,
+  `emailid` varchar(30) NOT NULL,
+  `web` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `address_1`
+--
+
+INSERT INTO `address_1` (`postal_addr_o`, `ph_o`, `fax_o`, `res_addr_p`, `postal_addr_p`, `state_p`, `city_p`, `pin_p`, `std_p`, `ph_p`, `res_addt_l`, `postal_addr_l`, `state_l`, `city_l`, `pin_l`, `std_l`, `ph_l`, `per_mob`, `emailid`, `web`, `id`) VALUES
+('A', 324, 545, 'A', 'A', 'a', '', 0, 423525, 43234, '34234234', 'A', 'A', 'a', 0, 43234, 2323, 1313, '1@g.com', 'fsff', 1),
+('A', 1, 1, 'B', 'B', 'B', '', 0, 45, 434, '545', 'B', 'B', 'B', 0, 32, 8979, 566, '2@g.com', 'df teg rrt', 2),
+('A', 4, 5455, 'sdf', 'dffsf', 'fdff', '', 0, 335, 3535, '53535', 'sdf', 'dffsf', 'fdff', 0, 3535, 53535, 3535, 'new@g.com', 'ggsdgsg', 3),
+('qwee', 232424, 34554, 'grg', 'gggrgerg', 'dffgg', 'ggfg', 5255, 4634636, 3546346, 'grg', 'gggrgerg', 'dffgg', 'ggfg', 5255, 4634636, 3546346, 466365345, 'e@g.com', 'fdvdsvef', 4),
+('wtrt', 45345, 32234, 'dsadad', 'sdasf', 'sdasda', 'sfasff', 3123123, 214124, 214124, 'dsadad', 'sdasf', 'sdasda', 'sfasff', 3123123, 214124, 214124, 34234, '3@g.com', 'dfdsffe', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin@gmail.com', '12345');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `create_account`
+--
+
+CREATE TABLE `create_account` (
+  `id` int(11) NOT NULL,
+  `name` char(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `mobile` bigint(20) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `gender` enum('male','female','other') NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `pictrure` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `create_account`
+--
+
+INSERT INTO `create_account` (`id`, `name`, `email`, `password`, `mobile`, `address`, `gender`, `country`, `pictrure`) VALUES
+(4, 'sunil Vishwakarma', 'amitvish9999@gmail.com', '8190', 7275308190, 'kolpanday,azamgarh', 'male', 'China', 'img2.png'),
+(7, 'suraj vishwakarma', 'suraj@gmail.com', '8190', 9120140055, 'kolpanday,azamgarh', 'male', 'India', 'Capture.PNG'),
+(8, 'Om', 'om@gmail.com', '8090', 7890809, 'bnjkghjbjb', 'male', 'india', ''),
+(9, 'Ragini Vishwakarma', 'ragini@gmail.com', '1234`', 7275540965, 'kolpanday(Kolgghat),Azamgarh', 'male', 'India', '6cy5bLaei.jpg'),
+(10, 'Anjali Vishwakarma', 'anjali@gmail.com', '123', 7275308190, 'kolpanday azamgarh', 'male', 'India', 'God_Shiva_Wallpaper.jpg'),
+(11, 'mrityunjai', 'mr8090@gmail.com', '8190', 71727534567, 'kolpghta', 'male', 'India', 'amazing-shiv-shankar-images-3d-shiva-on-pinterest-shiv-shankar-images-3d.jpg'),
+(12, 'sanjeev', 'sanjeevtech2@gmail.com', '1234', 9015501897, 'Noida', 'male', 'India', '20171120_175518.jpg'),
+(13, 'Niki', 'abc@g.com', '123', 123, '123', 'male', 'India', 'dfd 0.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `details_slider`
+--
+
+CREATE TABLE `details_slider` (
+  `id` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `caption` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` bigint(20) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `mobile`, `message`) VALUES
+(1, 'Amit', 'amitvish9999@gmail.com', 7275308190, 'Nice');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job_exp`
+--
+
+CREATE TABLE `job_exp` (
+  `id` int(11) NOT NULL,
+  `emailid` varchar(30) NOT NULL,
+  `org` varchar(30) NOT NULL,
+  `job_pro` varchar(30) NOT NULL,
+  `desig` varchar(30) NOT NULL,
+  `to_date` date NOT NULL,
+  `from_date` date NOT NULL,
+  `addr` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `job_exp`
+--
+
+INSERT INTO `job_exp` (`id`, `emailid`, `org`, `job_pro`, `desig`, `to_date`, `from_date`, `addr`) VALUES
+(1, '2@g.com', 'sdasd', 'wdwad', 'wdawdw', '2020-05-02', '2020-05-03', 'wedwedqwd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_info`
+--
+
+CREATE TABLE `personal_info` (
+  `id` int(30) NOT NULL,
+  `fname` varchar(20) NOT NULL,
+  `mname` varchar(20) NOT NULL,
+  `lname` varchar(20) NOT NULL,
+  `DOB` varchar(20) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `marital` varchar(10) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `CV` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `personal_info`
+--
+
+INSERT INTO `personal_info` (`id`, `fname`, `mname`, `lname`, `DOB`, `gender`, `marital`, `email`, `CV`) VALUES
+(1, 'new', 'new', 'new', '2020-04-08', 'male', 'Unmarried', 'new@g.com', 0x636f6e736572766174696f6e6f66706c616e7473616e64616e696d616c732d3136313032353137333332352e706466),
+(2, '', '', '', '2000-01-04', '', 'Unmarried', '', 0x636f6e736572766174696f6e6f66706c616e7473616e64616e696d616c732d3136313032353137333332352e706466),
+(5, '2', '2', '2', '2020-04-10', 'Female', 'Married', '2@g.com', 0x636f6e736572766174696f6e6f66706c616e7473616e64616e696d616c732d3136313032353137333332352e706466),
+(6, 'Niki', 'Nitin', 'D', '', 'Female', '', 'Aqw', ''),
+(7, 'Nikita ', 'Nitin', 'Dharmadhikari', '', 'Female', '', 'qqe', ''),
+(8, 'Nikita', 'Nitin', 'Dharmadhikari', '', 'Female', '', 'dnikitan97@gmail.com', ''),
+(15, 'niki', 'N', 'qwqe', '', 'Female', '', '3@g.com', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position_12`
+--
+
+CREATE TABLE `position_12` (
+  `id` int(11) NOT NULL,
+  `emailid` varchar(30) NOT NULL,
+  `divi` varchar(30) NOT NULL,
+  `position_1` varchar(30) NOT NULL,
+  `desig` varchar(30) NOT NULL,
+  `DOJ` date NOT NULL,
+  `add_info` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `position_12`
+--
+
+INSERT INTO `position_12` (`id`, `emailid`, `divi`, `position_1`, `desig`, `DOJ`, `add_info`) VALUES
+(1, '2@g.com', 'www', 'ww', 'ww', '2020-05-14', 'www');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `publication`
+--
+
+CREATE TABLE `publication` (
+  `id` int(11) NOT NULL,
+  `emailid` varchar(30) NOT NULL,
+  `sci_j` varchar(30) NOT NULL,
+  `ref_j` varchar(30) NOT NULL,
+  `pub_title` varchar(30) NOT NULL,
+  `yop` varchar(5) NOT NULL,
+  `imf` varchar(30) NOT NULL,
+  `auth` varchar(50) NOT NULL,
+  `pub_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `publication`
+--
+
+INSERT INTO `publication` (`id`, `emailid`, `sci_j`, `ref_j`, `pub_title`, `yop`, `imf`, `auth`, `pub_id`) VALUES
+(1, 'e@g.com', 'faf', 'dfasfe', 'asfafaf', '13235', 'erer', 'efefa', 2147483647),
+(2, '2@g.com', 'asef', 'rferer', 'fefeaf', '5827', 'dfv er', 'erewvrer', 52752);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rooms`
+--
+
+CREATE TABLE `rooms` (
+  `room_id` int(11) NOT NULL,
+  `room_no` int(11) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `price` bigint(20) NOT NULL,
+  `details` text NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`room_id`, `room_no`, `type`, `price`, `details`, `image`) VALUES
+(30, 504, 'Luxurious Suite', 16000, 'Engulf yourself in the plush luxury of our premier rooms. An upgraded version of the Suite room, these rooms offer an elegant design with larger room space.', 'Luxury_img10.jpg'),
+(31, 302, 'Standard Room', 14000, 'Simple design king bedded room are well equipped with modern amenities.', 'Standard _img16.jpg'),
+(32, 312, 'Suite', 13000, 'Enjoy the view of Anand from attach sitting area, An upgraded version of the Deluxe room, these rooms offer an elegant design with larger room space.', 'Suit_img22.jpg'),
+(33, 205, 'Twin Deluxe Room', 120000, 'The Contemporary yet simple designed twin bedded rooms are well equipped with modern amenities. Fresh Decor and refined ambiance is the winning combination to make these rooms an ideal choice for discerning business traveler.', 'Twin_img24.jpg'),
+(34, 0, 'Parking Area', 0, 'ON-SITE PARKING Comfort Hotel Perth City provides 33 secure car parking spaces, free-of-charge for house guests which are subject to availability and on a ...\r\n', 'parking.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_booking_details`
+--
+
+CREATE TABLE `room_booking_details` (
+  `id` int(11) NOT NULL,
+  `name` char(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `zip` int(20) NOT NULL,
+  `contry` varchar(50) NOT NULL,
+  `room_type` varchar(100) NOT NULL,
+  `check_in_date` date NOT NULL,
+  `check_in_time` varchar(6) NOT NULL,
+  `check_out_date` date NOT NULL,
+  `Occupancy` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `room_booking_details`
+--
+
+INSERT INTO `room_booking_details` (`id`, `name`, `email`, `phone`, `address`, `city`, `state`, `zip`, `contry`, `room_type`, `check_in_date`, `check_in_time`, `check_out_date`, `Occupancy`) VALUES
+(5, 'Sumit', 'sumit@gmail.com', 7398713060, 'kolpanday,azamgarh', 'Azamgarh', 'U.P.', 276001, 'India', 'Deluxe Room', '2019-12-05', '12:00', '2019-01-06', 'single'),
+(6, 'Om', 'om@gmail.com', 7890809, 'bnjkghjbjb', 'azamgarh', 'up', 276001, 'India', 'Deluxe Room', '2019-05-08', '08:00', '2019-06-04', 'single'),
+(7, 'Ragini Vishwakarma', 'ragini@gmail.com', 727550965, 'Kolpanday,Kolghat,Azamgarh', 'Azamgarh', 'U.P', 276001, 'India', 'Standard Room', '2019-12-06', '08:00', '2019-12-06', 'single'),
+(8, 'Anlaji viahwakarma', 'anjali@gmail.com', 7275308190, 'kolpanday azamgarh', 'azamgarh', 'U.P', 276001, 'India', 'Standard Room', '2019-12-06', '08:00', '2019-12-06', 'single'),
+(12, 'sanjeev', 'sanjeevtech2@gmail.com', 0, 'dfjdlfj', '', '', 0, '', 'Suite Room', '2019-05-22', '22:57', '2017-10-31', 'single'),
+(13, '', '', 0, '', '', '', 0, '', 'Deluxe Room', '2020-05-07', '21:57', '2020-05-13', 'single');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider`
+--
+
+CREATE TABLE `slider` (
+  `id` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `caption` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `image`, `caption`) VALUES
+(3, 'img3.jpg', ''),
+(6, 'img2.jpg', ''),
+(8, 'img1.png', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(20) NOT NULL,
+  `mname` varchar(30) NOT NULL,
+  `lname` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `pass` int(20) NOT NULL,
+  `mobile` bigint(20) NOT NULL,
+  `lab` varchar(30) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `designation` varchar(20) NOT NULL,
+  `regdate` varchar(10) DEFAULT NULL,
+  `pic` blob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `fname`, `mname`, `lname`, `email`, `pass`, `mobile`, `lab`, `gender`, `designation`, `regdate`, `pic`) VALUES
+(1, 'Nikita', 'Nitin', 'Dharmadhikari', 'nikita.dharmadhikari@cumminsco', 123, 9922443597, 'lab A, Lab B', 'male', 'intern', '0000-00-00', 0x30),
+(3, 'N', 'P', 'D', 'q@g.com', 123, 1231231231, 'A', 'male', 'B', '0000-00-00', 0x555441206172696e67746f6e2e706e67),
+(4, 'n', 'n', 'n', 'qw@g.com', 123, 123456123, 'A', 'male', 'F', '0000-00-00', 0x555441206172696e67746f6e2e706e67),
+(5, '1', '2', '3', '1@g.com', 1234, 1234567891, 'A', 'male', 'E', '2020-04-08', 0x555441206172696e67746f6e2e706e67),
+(6, 'new', 'new', 'new', 'new@g.com', 123, 123456, 'A', 'male', 'A', '2020-04-28', 0x64666420302e706e67),
+(7, '2', '2', '2', '2@g.com', 123, 123, 'AB', 'Female', 'DA', '2020-04-18', 0x352e6a7067),
+(8, 'Niki', 'Nitin', 'D', 'Aqw', 123, 0, '', 'Female', 'f bfe', '2020-05-13', ''),
+(17, 'niki', 'N', 'qwqe', '3@g.com', 123, 8521479630, 'NB', 'Female', 'lord', '2020-05-14', 0x6d617872657364656661756c742e6a7067);
+
+--
+-- Triggers `users`
+--
+DELIMITER $$
+CREATE TRIGGER `delete_addr` BEFORE DELETE ON `users` FOR EACH ROW DELETE FROM address_1
+    WHERE users.email = address_1.emailid
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `delete_je` BEFORE DELETE ON `users` FOR EACH ROW DELETE FROM job_exp
+    WHERE users.email = job_exp.emailid
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `delete_pi` BEFORE DELETE ON `users` FOR EACH ROW DELETE FROM personal_info
+    WHERE users.email = personal_info.email
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `delete_pos` BEFORE DELETE ON `users` FOR EACH ROW DELETE FROM position_12
+    WHERE users.email = position_12.emailid
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `delete_pub` BEFORE DELETE ON `users` FOR EACH ROW DELETE FROM publication
+    WHERE users.email = publication.emailid
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_addr` AFTER INSERT ON `users` FOR EACH ROW insert into address_1(emailid) VALUES(new.email)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_je` AFTER INSERT ON `users` FOR EACH ROW insert into job_exp(emailid) VALUES(new.email)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_pi` AFTER INSERT ON `users` FOR EACH ROW insert into personal_info(fname,mname,lname,email,gender) VALUES(new.fname,new.mname,new.lname,new.email,new.gender)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_pos` AFTER INSERT ON `users` FOR EACH ROW insert into position_12(emailid) VALUES(new.email)
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_pub` AFTER INSERT ON `users` FOR EACH ROW insert into publication(emailid) VALUES(new.email)
+$$
+DELIMITER ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `address_1`
+--
+ALTER TABLE `address_1`
+  ADD PRIMARY KEY (`id`,`emailid`),
+  ADD UNIQUE KEY `emailid` (`emailid`);
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `create_account`
+--
+ALTER TABLE `create_account`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `details_slider`
+--
+ALTER TABLE `details_slider`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `job_exp`
+--
+ALTER TABLE `job_exp`
+  ADD PRIMARY KEY (`id`,`emailid`),
+  ADD UNIQUE KEY `emailid` (`emailid`);
+
+--
+-- Indexes for table `personal_info`
+--
+ALTER TABLE `personal_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `position_12`
+--
+ALTER TABLE `position_12`
+  ADD PRIMARY KEY (`id`,`emailid`),
+  ADD UNIQUE KEY `emailid` (`emailid`);
+
+--
+-- Indexes for table `publication`
+--
+ALTER TABLE `publication`
+  ADD PRIMARY KEY (`id`,`emailid`),
+  ADD UNIQUE KEY `emailid` (`emailid`);
+
+--
+-- Indexes for table `rooms`
+--
+ALTER TABLE `rooms`
+  ADD PRIMARY KEY (`room_id`);
+
+--
+-- Indexes for table `room_booking_details`
+--
+ALTER TABLE `room_booking_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `address_1`
+--
+ALTER TABLE `address_1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `create_account`
+--
+ALTER TABLE `create_account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `details_slider`
+--
+ALTER TABLE `details_slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `job_exp`
+--
+ALTER TABLE `job_exp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `personal_info`
+--
+ALTER TABLE `personal_info`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `position_12`
+--
+ALTER TABLE `position_12`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `publication`
+--
+ALTER TABLE `publication`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `rooms`
+--
+ALTER TABLE `rooms`
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `room_booking_details`
+--
+ALTER TABLE `room_booking_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
